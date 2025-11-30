@@ -35,8 +35,9 @@
     "editorError.foreground": "#f38ba8",
     "editorWarning.foreground": "#fab387",
     "editorInfo.foreground": "#89b4fa",
-    "editorHint.foreground": "#89dceb",
+    "editorHint.foreground": "#89dceb", 
     
+      
     "sideBar.background": "#181825",
     "sideBar.foreground": "#cdd6f4",
     "sideBar.border": "#00000000",
