@@ -4,14 +4,22 @@
   "description": "A modern dark theme with carefully crafted colors for better focus and reduced eye strain",
   "version": "0.0.1",
   "publisher": "Mynthra",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hamzakargin/Mynthra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hamzakargin/Mynthra/issues"
+  },
+  "homepage": "https://github.com/hamzakargin/Mynthra#readme",
   "keywords": [
-  "theme",
-  "dark",
-  "mint",
-  "green",
-  "minimal",
-  "focus"
-],
+    "theme",
+    "dark",
+    "mint",
+    "green",
+    "minimal",
+    "focus"
+  ],
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.106.1"

@@ -1,0 +1,59 @@
+name: Publish VS Code Extension
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Check version bump type
+        id: version_type
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          if [[ $COMMIT_MSG == *"[major]"* ]]; then
+            echo "type=major" >> $GITHUB_OUTPUT
+          elif [[ $COMMIT_MSG == *"[minor]"* ]]; then
+            echo "type=minor" >> $GITHUB_OUTPUT
+          elif [[ $COMMIT_MSG == *"[patch]"* ]] || [[ $COMMIT_MSG == *"[fix]"* ]]; then
+            echo "type=patch" >> $GITHUB_OUTPUT
+          else
+            echo "type=none" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Bump version
+        if: steps.version_type.outputs.type != 'none'
+        run: |
+          npm version ${{ steps.version_type.outputs.type }} -m "chore: bump version to %s [skip ci]"
+          git push
+          git push --tags
+      
+      - name: Install vsce
+        if: steps.version_type.outputs.type != 'none'
+        run: npm install -g @vscode/vsce
+      
+      - name: Publish to Marketplace
+        if: steps.version_type.outputs.type != 'none'
+        run: vsce publish -p ${{ secrets.VSCE_PAT }}
