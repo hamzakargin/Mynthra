@@ -1,0 +1,31 @@
+{
+  "name": "mynthra-theme",
+  "displayName": "Mynthra",
+  "description": "A modern dark theme with carefully crafted colors for better focus and reduced eye strain",
+  "version": "0.0.1",
+  "publisher": "Mynthra",
+  "keywords": [
+  "theme",
+  "dark",
+  "mint",
+  "green",
+  "minimal",
+  "focus"
+],
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.106.1"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Mynthra",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Mynthra-color-theme.json"
+      }
+    ]
+  }
+}
