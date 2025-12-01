@@ -1,10 +1,8 @@
 name: Publish VS Code Extension
-
 on:
   push:
     branches:
       - main
-
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -49,6 +47,14 @@ jobs:
           npm version ${{ steps.version_type.outputs.type }} -m "chore: bump version to %s [skip ci]"
           git push
           git push --tags
+      
+      - name: Trigger Release Workflow
+        if: steps.version_type.outputs.type != 'none'
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          gh workflow run release.yml --ref v$VERSION
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Install vsce
         if: steps.version_type.outputs.type != 'none'
