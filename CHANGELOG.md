@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.8] - 2025-12-01
+
+- style: improve comment color readability [patch] (36ac806)
+- Trigger release workflow after version bump (a630bb4)
+
+
 ## [refs/heads/main] - 2025-12-01
 
 - Update icon width in README [patch] (6967707)
