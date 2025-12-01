@@ -1,0 +1,51 @@
+name: Bug Report
+about: Report a bug or issue with the Mynthra Theme
+title: "[BUG] "
+labels: bug
+assignees: []
+
+body:
+  - type: input
+    id: description
+    attributes:
+      label: Bug Description
+      description: "Describe the problem clearly"
+      placeholder: "The theme crashes when opening a large file..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: "List step by step how to reproduce the issue"
+      placeholder: |
+        1. Open VS Code
+        2. Activate Mynthra Theme
+        3. Observe the issue
+    validations:
+      required: true
+
+  - type: input
+    id: vscode_version
+    attributes:
+      label: VS Code Version
+      placeholder: "e.g. 1.84.0"
+    validations:
+      required: true
+
+  - type: input
+    id: theme_version
+    attributes:
+      label: Mynthra Theme Version
+      placeholder: "e.g. 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: "e.g. Windows 11, macOS 13.2"
+    validations:
+      required: true
