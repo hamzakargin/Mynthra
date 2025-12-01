@@ -1,0 +1,83 @@
+name: Create Release and Update Changelog
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Get version from tag
+        id: get_version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      
+      - name: Generate Changelog
+        id: changelog
+        run: |
+          PREVIOUS_TAG=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1) 2>/dev/null || echo "")
+          CURRENT_TAG="${{ steps.get_version.outputs.tag }}"
+          
+          if [ -z "$PREVIOUS_TAG" ]; then
+            COMMITS=$(git log --pretty=format:"- %s (%h)" --no-merges | grep -v "chore: bump version" | grep -v "docs: update CHANGELOG")
+          else
+            COMMITS=$(git log ${PREVIOUS_TAG}..HEAD --pretty=format:"- %s (%h)" --no-merges | grep -v "chore: bump version" | grep -v "docs: update CHANGELOG")
+          fi
+          
+          if [ ! -f CHANGELOG.md ]; then
+            echo "# Changelog" > CHANGELOG.md
+            echo "" >> CHANGELOG.md
+          fi
+          
+          {
+            echo "# Changelog"
+            echo ""
+            echo "## [${{ steps.get_version.outputs.version }}] - $(date +%Y-%m-%d)"
+            echo ""
+            echo "$COMMITS"
+            echo ""
+            tail -n +2 CHANGELOG.md 2>/dev/null || echo ""
+          } > CHANGELOG.tmp && mv CHANGELOG.tmp CHANGELOG.md
+          
+          {
+            echo "changelog<<EOF"
+            echo "## 🎉 What's Changed"
+            echo ""
+            echo "$COMMITS"
+            echo ""
+            echo "**Full Changelog**: https://github.com/${{ github.repository }}/compare/${PREVIOUS_TAG}...${CURRENT_TAG}"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+      
+      - name: Commit CHANGELOG
+        run: |
+          git add CHANGELOG.md
+          git commit -m "docs: update CHANGELOG for ${{ steps.get_version.outputs.version }} [skip ci]" || true
+          git push origin HEAD:main || true
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.get_version.outputs.tag }}
+          name: Release ${{ steps.get_version.outputs.version }}
+          body: ${{ steps.changelog.outputs.changelog }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
