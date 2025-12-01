@@ -1,0 +1,50 @@
+name: Feature Request
+about: Suggest a new feature for the Mynthra Theme
+title: "[FEATURE] "
+labels: enhancement
+assignees: []
+
+body:
+  - type: input
+    id: description
+    attributes:
+      label: Feature Description
+      description: "Describe the feature you would like to see"
+      placeholder: "I want a new color variant for syntax highlighting..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefits / Use Case
+      description: "Explain why this feature is useful"
+      placeholder: |
+        1. Improves readability
+        2. Matches VS Code light theme
+    validations:
+      required: true
+
+  - type: input
+    id: vscode_version
+    attributes:
+      label: VS Code Version
+      placeholder: "e.g. 1.84.0"
+    validations:
+      required: true
+
+  - type: input
+    id: theme_version
+    attributes:
+      label: Mynthra Theme Version
+      placeholder: "e.g. 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: "e.g. Windows 11, macOS 13.2"
+    validations:
+      required: true
