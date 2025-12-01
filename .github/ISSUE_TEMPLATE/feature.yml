@@ -4,6 +4,11 @@ labels: enhancement
 assignees: []
 
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to suggest a new feature or improvement for the Mynthra Theme.
+
   - type: input
     id: description
     attributes:
