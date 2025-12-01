@@ -1,4 +1,5 @@
 name: Feature Request
+description: Suggest a new feature or improvement for the Mynthra Theme
 title: "[FEATURE] "
 labels: enhancement
 assignees: []
@@ -7,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this form to suggest a new feature or improvement for the Mynthra Theme.
+        Use this form to provide details about the feature you want.
 
   - type: input
     id: description
