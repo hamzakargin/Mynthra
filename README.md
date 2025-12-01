@@ -1,5 +1,5 @@
 <h3 align="center">
-  <img src="./icon.png" width="125" alt="Mynthra Icon"/>
+  <img src="./icon.png" width="130" alt="Mynthra Icon"/>
 </h3>
 
 
