@@ -1,14 +1,18 @@
-name: Bug Report
-about: Report a bug or issue with the Mynthra Theme
+name: "Bug Report"
+description: "File a bug or issue with the Mynthra Theme"
 title: "[BUG] "
-labels: bug
+labels: ["bug"]
 assignees: []
 
 body:
-  - type: input
-    id: description
+  - type: markdown
     attributes:
-      label: Bug Description
+      value: "Thanks for taking the time to fill out this bug report! Please provide as much detail as possible."
+
+  - type: input
+    id: bug_description
+    attributes:
+      label: "Bug Description"
       description: "Describe the problem clearly"
       placeholder: "The theme crashes when opening a large file..."
     validations:
@@ -17,7 +21,7 @@ body:
   - type: textarea
     id: steps
     attributes:
-      label: Steps to Reproduce
+      label: "Steps to Reproduce"
       description: "List step by step how to reproduce the issue"
       placeholder: |
         1. Open VS Code
@@ -29,7 +33,7 @@ body:
   - type: input
     id: vscode_version
     attributes:
-      label: VS Code Version
+      label: "VS Code Version"
       placeholder: "e.g. 1.84.0"
     validations:
       required: true
@@ -37,7 +41,7 @@ body:
   - type: input
     id: theme_version
     attributes:
-      label: Mynthra Theme Version
+      label: "Mynthra Theme Version"
       placeholder: "e.g. 1.0.0"
     validations:
       required: true
@@ -45,7 +49,7 @@ body:
   - type: input
     id: os
     attributes:
-      label: Operating System
+      label: "Operating System"
       placeholder: "e.g. Windows 11, macOS 13.2"
     validations:
       required: true
