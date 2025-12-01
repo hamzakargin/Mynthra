@@ -1,3 +1,6 @@
+<h3 align="center">
+  <img src="./icon.png" width="100" alt="Mynthra Icon"/>
+</h3>
 
 
 # Mynthra Theme
