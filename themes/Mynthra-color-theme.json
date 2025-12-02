@@ -36,6 +36,7 @@
     "editorWarning.foreground": "#fab387",
     "editorInfo.foreground": "#89b4fa",
     "editorHint.foreground": "#89dceb", 
+    
      
     "sideBar.background": "#181825",
     "sideBar.foreground": "#cdd6f4",
@@ -46,11 +47,11 @@
     
     "tab.activeBackground": "#1e1e2e",
     "tab.activeForeground": "#cdd6f4",
-    "tab.activeBorder": "#00000000",
+    "tab.activeBorder": "#63E6BE",//
     "tab.activeBorderTop": "#00000000",
     "tab.inactiveBackground": "#181825",
     "tab.inactiveForeground": "#6c7086",
-    "tab.border": "#00000000",
+    "tab.border": "#00000000"  ,//
     "editorGroupHeader.tabsBackground": "#181825",
     
     "statusBar.background": "#1e1e2e",
@@ -64,8 +65,9 @@
     "activityBar.foreground": "#cdd6f4",
     "activityBar.inactiveForeground": "#6c7086",
     "activityBar.border": "#00000000",
-    "activityBarBadge.background": "#89b4fa",
+    "activityBarBadge.background": "#63E6BE",
     "activityBarBadge.foreground": "#1e1e2e",
+    "activityBar.activeBorder": "#00000000",
     
     "titleBar.activeBackground": "#1e1e2e",
     "titleBar.activeForeground": "#cdd6f4",
@@ -86,7 +88,7 @@
     "input.background": "#313244",
     "input.border": "#45475a",
     "input.foreground": "#cdd6f4",
-    "inputOption.activeBorder": "#89b4fa",
+    "inputOption.activeBorder": "#63E6BE",//
     "inputValidation.errorBackground": "#f38ba8",
     "inputValidation.errorForeground": "#1e1e2e",
     
