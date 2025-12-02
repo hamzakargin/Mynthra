@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.0] - 2025-12-02
+
+- style: update UI colors and theme accents [minor] (0427bea)
+- Create mynthra.ts for GitHub language detection (7b24fc3)
+
+
 ## [0.0.8] - 2025-12-01
 
 - style: improve comment color readability [patch] (36ac806)
