@@ -203,6 +203,16 @@
       "settings": {
         "foreground": "#FF659C"
       }
+      },
+      {
+      "name": "JSON Property Names (Object Keys)",
+      "scope": [
+        "support.type.property-name.json",
+        "meta.structure.dictionary.key.json"
+      ],
+      "settings": {
+        "foreground": "#73DFA5"
+      }
     },
     {
       "scope": [

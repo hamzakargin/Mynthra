@@ -33,6 +33,11 @@
         "label": "Mynthra",
         "uiTheme": "vs-dark",
         "path": "./themes/Mynthra-color-theme.json"
+      },
+       {
+    "label": "Mynthra Vaporwave",
+    "uiTheme": "vs-dark",
+    "path": "./themes/mynthra-vaporwave.json"
       }
     ]
   }
