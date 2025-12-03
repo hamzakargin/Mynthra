@@ -2,7 +2,7 @@
   "name": "mynthra-theme",
   "displayName": "Mynthra",
   "description": "A modern dark theme with carefully crafted colors for better focus and reduced eye strain",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "Mynthra",
   "repository": {
     "type": "git",
@@ -34,10 +34,10 @@
         "uiTheme": "vs-dark",
         "path": "./themes/Mynthra-color-theme.json"
       },
-       {
-    "label": "Mynthra Vaporwave",
-    "uiTheme": "vs-dark",
-    "path": "./themes/mynthra-vaporwave.json"
+      {
+        "label": "Mynthra Vaporwave",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mynthra-vaporwave.json"
       }
     ]
   }
