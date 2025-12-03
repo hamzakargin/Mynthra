@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.1] - 2025-12-03
+
+- Update README.md with theme description and usage instructions [patch] (aed6a16)
+
+
 ## [0.2.0] - 2025-12-03
 
 - feat: add Mynthra Vaporwave theme variant (c715d77)
