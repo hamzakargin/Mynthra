@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.0] - 2025-12-03
+
+- feat: add Mynthra Vaporwave theme variant (c715d77)
+
+
 ## [0.1.0] - 2025-12-02
 
 - style: update UI colors and theme accents [minor] (0427bea)
