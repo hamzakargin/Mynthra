@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.3] - 2025-12-04
+
+- Revise README with new images and features [patch] (24694f4)
+
+
 ## [0.2.2] - 2025-12-03
 
 - Update README.md [patch] (e80d304)
