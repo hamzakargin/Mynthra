@@ -67,7 +67,7 @@ After installation:
 1. Open Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
 2. Type **"Color Theme"** and select **Preferences: Color Theme**
 3. Choose either:
-   - **Mynthra** (classic dark)
+   - **Mynthra** (dark)
    - **Mynthra Vaporwave** (purple-tinted)
 
 ---
