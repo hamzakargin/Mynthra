@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.0] - 2026-01-03
+
+- Enable semantic highlighting in vaporwave theme. [minor] (6ef0a60)
+
+
 ## [0.2.3] - 2025-12-04
 
 - Revise README with new images and features [patch] (24694f4)
